@@ -2,8 +2,8 @@
 <div id="pp-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99999;align-items:center;justify-content:center;padding:20px;font-family:'Segoe UI','Microsoft YaHei',sans-serif">
   <div style="background:#fff;border-radius:16px;max-width:380px;width:100%;padding:24px;color:#1a1a2e">
     <h3 style="margin-bottom:10px">Privacy Policy / 隐私政策</h3>
-    <p style="font-size:14px;line-height:1.6;margin-bottom:8px">Please read our <a href="POLICY_URL#en" target="_blank" rel="noopener">Privacy Policy</a> before using CalcHub by Mythbborrn. It explains how ads (Google AdSense) work and your rights.</p>
-    <p style="font-size:14px;line-height:1.6;margin-bottom:16px">使用 CalcHub by Mythbborrn 前，请阅读<a href="POLICY_URL#zh" target="_blank" rel="noopener">《隐私政策》</a>，了解广告（Google AdSense）的运作方式及您的权利。</p>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:8px">Please read our <a href="POLICY_URL#en" target="_blank" rel="noopener">Privacy Policy</a> before using CalcHub by Mythbborrn. It explains how we handle data and your rights.</p>
+    <p style="font-size:14px;line-height:1.6;margin-bottom:16px">使用 CalcHub by Mythbborrn 前，请阅读<a href="POLICY_URL#zh" target="_blank" rel="noopener">《隐私政策》</a>，了解我们如何处理数据及您的权利。</p>
     <button id="pp-agree" style="width:100%;padding:12px;border:0;border-radius:10px;background:#6c63ff;color:#fff;font-weight:700;margin-bottom:8px">Agree / 同意</button>
     <button id="pp-decline" style="width:100%;padding:12px;border:1.5px solid #e8e8f0;border-radius:10px;background:#fff;color:#1a1a2e;font-weight:600">Decline / 不同意</button>
   </div>
@@ -16,17 +16,15 @@
   try { accepted = localStorage.getItem(KEY) === '1'; } catch (e) {}
   if (!accepted) {
     overlay.style.display = 'flex';
-    // IMPORTANT: do not load ads/analytics scripts until Agree is tapped.
+    
     document.getElementById('pp-agree').onclick = function () {
       try { localStorage.setItem(KEY, '1'); } catch (e) {}
       overlay.style.display = 'none';
-      // loadAds();  // <- call your AdSense loader here
     };
     document.getElementById('pp-decline').onclick = function () {
       window.close(); // or show a screen saying the app can't be used without agreeing
     };
   } else {
-    // loadAds();
   }
 })();
 </script>
